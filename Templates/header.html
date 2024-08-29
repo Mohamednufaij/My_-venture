@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#">YourLogo</a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-cart">
+                <input type="text" id="search-bar" placeholder="Search for products...">
+                <button id="search-button">Search</button>
+                <div class="cart-icon" onclick="viewCart()">
+                    <span id="cart-count">0</span>
+                    🛒
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <script src="script.js">
+        // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    let cartCount = 0;
+
+    function updateCartCount() {
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+
+    function viewCart() {
+        alert(`You have ${cartCount} items in your cart.`);
+    }
+
+    // Example: Update cart count on some event (e.g., product added to cart)
+    document.getElementById('search-button').addEventListener('click', function() {
+        // Dummy logic to increment cart count for demonstration
+        cartCount++;
+        updateCartCount();
+    });
+
+    updateCartCount();  // Initialize cart count on page load
+});
+
+    </script>
+</body>
+</html>
